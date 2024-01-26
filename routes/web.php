@@ -22,6 +22,13 @@ Route::get('maintenance-mode', 'Web\WebController@maintenance_mode')->name('main
 
  
 
+//for aws migrations
+Route::get('run-aws-migrations', function(){
+    Artisan::call('optimize:clear');
+    Artisan::call('migrate:fresh --seed');
+    return "migration successfull";
+});
+
 
 Route::group(['namespace' => 'Web','middleware'=>['maintenance_mode']], function () {
     
