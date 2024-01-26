@@ -27,8 +27,4 @@
         <server name="QUEUE_CONNECTION" value="sync"/>
         <server name="SESSION_DRIVER" value="array"/>
     </php>
-    <exclude>
-        <!-- Exclude all tests -->
-        <file>./tests</file>
-    </exclude>
 </phpunit>
