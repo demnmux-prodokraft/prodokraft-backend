@@ -15,13 +15,10 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail;
 
 
-
-
 //for maintenance mode
 Route::get('maintenance-mode', 'Web\WebController@maintenance_mode')->name('maintenance-mode');
 
  
-
 //for aws migrations
 Route::get('run-aws-migrations', function(){
     Artisan::call('optimize:clear');
